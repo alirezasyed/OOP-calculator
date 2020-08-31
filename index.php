@@ -1,7 +1,9 @@
 <?php
   include "inc/functions.php";
-  $objCal = new MyCalculator();
 
+  // creating new instances of the class MyCalculator
+  $objCall = new MyCalculator();
+  $obj = new MyCalculator();
  ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
   </head>
   <body>
       <form action="" method="post">
-          <input type="text" name="firstNumber" value="">
+          <input type="number" name="firstNumber" value="">
           <input type="number" name="secondNumber" value="">
           <select class="" name="operator">
               <option>None</option>
@@ -27,38 +29,28 @@
       </form>
 
       <?php
-          if(isset($_POST['submit'])) {
+          if (isset($_POST['submit'])) {
               $firstNumber = $_POST['firstNumber'];
               $secondNumber = $_POST['secondNumber'];
               $operator = $_POST['operator'];
 
-              switch ($operator) {
-                  case "None":
-                      echo "Please select an operator!";
-                      break;
-                  case "Add":
-                      echo   $firstNumber + $secondNumber;
-                      break;
-                  case "Substract":
-                      echo $firstNumber - $secondNumber;
-                      break;
-                  case "Multiply":
-                      echo $firstNumber * $secondNumber;
-                      break;
-                  case "divide":
-                      echo $firstNumber / $secondNumber;
-                      break;
-                  case "modulo":
-                      echo $firstNumber % $secondNumber;
-                      break;
-                  default:
-                        echo "Please enter some value";
-                        break;
+              if ($operator === 'Add') {
+                // here instead of using x, y to do the operation like in the functions, we use ($firstNumber, $secondNumber) to do the operation.
+                $objCall->add($firstNumber, $secondNumber);
+              }elseif ($operator === 'Substract') {
+                $objCall->sub($firstNumber, $secondNumber);
+              }elseif ($operator === 'Multiply') {
+                $objCall->sub($firstNumber, $secondNumber);
+              }elseif ($operator === 'Divide') {
+                $objCall->sub($firstNumber, $secondNumber);
+              }elseif ($operator === 'modulo') {
+                $objCall->sub($firstNumber, $secondNumber);
+              }
+              else {
+                echo "Please enter some value";
               }
 
-
-          }
-
+            }
 
        ?>
 
