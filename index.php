@@ -1,16 +1,16 @@
 <?php
-  include "inc/functions.php";
+include "inc/functions.php";
 
-  // creating new instances of the class MyCalculator
-  $objCall = new MyCalculator();
-  $obj = new MyCalculator();
- ?>
+// creating new instances of the class MyCalculator
+// $objCall = new MyCalculator();
+// $obj = new MyCalculator();
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Calculation</title>
   </head>
   <body>
       <form action="" method="post">
@@ -36,15 +36,21 @@
 
               if ($operator === 'Add') {
                 // here instead of using x, y to do the operation like in the functions, we use ($firstNumber, $secondNumber) to do the operation.
-                $objCall->add($firstNumber, $secondNumber);
+                // $objCall->add($firstNumber, $secondNumber);
+                // using static method
+                MyCalculator::add($firstNumber, $secondNumber);
               } elseif ($operator === 'Substract') {
-                $objCall->sub($firstNumber, $secondNumber);
+                // $objCall->sub($firstNumber, $secondNumber);
+                MyCalculator::sub($firstNumber, $secondNumber);
               } elseif ($operator === 'Multiply') {
-                $objCall->mul($firstNumber, $secondNumber);
+                // $objCall->mul($firstNumber, $secondNumber);
+                MyCalculator::mul($firstNumber, $secondNumber);
               } elseif ($operator === 'Divide') {
-                $objCall->div($firstNumber, $secondNumber);
+                // $objCall->div($firstNumber, $secondNumber);
+                MyCalculator::div($firstNumber, $secondNumber);
               } elseif ($operator === 'Modulo') {
-                $objCall->mod($firstNumber, $secondNumber);
+                // $objCall->mod($firstNumber, $secondNumber);
+                MyCalculator::mod($firstNumber, $secondNumber);
               } else {
                 echo "Please enter some value";
               }

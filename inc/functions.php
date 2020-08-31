@@ -1,19 +1,19 @@
 <?php
 class MyCalculator {
 
-  public function add($x, $y) {
+  public static function add($x, $y) {
     echo "Addition is: ".($x + $y). "<br>";
   }
-  public function sub($x, $y) {
+  public static function sub($x, $y) {
     echo "Substraction is: ".($x - $y). "<br>";
   }
-  public function mul($x, $y) {
+  public static function mul($x, $y) {
     echo "Multiplication is: ".($x * $y). "<br>";
   }
-  public function div($x, $y) {
+  public static function div($x, $y) {
     echo "Division is: ".($x / $y). "<br>";
   }
-  public function mod($x, $y) {
+  public static function mod($x, $y) {
     echo "Modulo is: ".($x % $y). "<br>";
   }
 }
