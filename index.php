@@ -14,15 +14,15 @@
   </head>
   <body>
       <form action="" method="post">
-          <input type="number" name="firstNumber" value="">
-          <input type="number" name="secondNumber" value="">
+          <input type="number" name="firstNumber">
+          <input type="number" name="secondNumber">
           <select class="" name="operator">
               <option>None</option>
               <option>Add</option>
               <option>Substract</option>
               <option>Multiply</option>
               <option>Divide</option>
-              <option>modulo</option>
+              <option>Modulo</option>
           </select>
           <br>
           <button type="submit" name="submit" value="submit">Calculate</button>
@@ -37,16 +37,15 @@
               if ($operator === 'Add') {
                 // here instead of using x, y to do the operation like in the functions, we use ($firstNumber, $secondNumber) to do the operation.
                 $objCall->add($firstNumber, $secondNumber);
-              }elseif ($operator === 'Substract') {
+              } elseif ($operator === 'Substract') {
                 $objCall->sub($firstNumber, $secondNumber);
-              }elseif ($operator === 'Multiply') {
-                $objCall->sub($firstNumber, $secondNumber);
-              }elseif ($operator === 'Divide') {
-                $objCall->sub($firstNumber, $secondNumber);
-              }elseif ($operator === 'modulo') {
-                $objCall->sub($firstNumber, $secondNumber);
-              }
-              else {
+              } elseif ($operator === 'Multiply') {
+                $objCall->mul($firstNumber, $secondNumber);
+              } elseif ($operator === 'Divide') {
+                $objCall->div($firstNumber, $secondNumber);
+              } elseif ($operator === 'Modulo') {
+                $objCall->mod($firstNumber, $secondNumber);
+              } else {
                 echo "Please enter some value";
               }
 
